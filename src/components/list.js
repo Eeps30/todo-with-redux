@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getList } from '../components/actions';
 import { connect } from 'react-redux';
 import index from '../reducers';
+import { Link } from 'react-router-dom';
 
 class List extends Component {
     componentDidMount(){
@@ -15,9 +16,16 @@ class List extends Component {
         });
 
         return(
-            <ul className="collection">
-                {itemElements}
-            </ul>
+            <div>
+                <div>
+                    <Link className="btn left" to="/add-item">Add Item</Link>
+                </div>
+                <div>
+                    <ul className="collection">
+                        {itemElements}
+                    </ul>
+                </div>
+            </div>
         )
     }
 }
