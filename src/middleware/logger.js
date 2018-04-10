@@ -1,6 +1,5 @@
 
 export default store => next => action => {
-    console.log('Logger MiddleWare: ', action);
     return next(action); 
 }
 
