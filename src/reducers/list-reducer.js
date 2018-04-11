@@ -15,6 +15,9 @@ export default function(state = DEFAULT_STATE, action){
         case types.DELETE_SINGLE_ITEM:
             console.log('Item being deleted: ', response)
             return {...state, singleItem: action.payload.data.todo};
+        case types.TOGGLE_COMPLETE:
+            console.log('Getting item details');
+            return {...state, singleItem: action.payload.data.todo};
         default: 
             return state;
     }

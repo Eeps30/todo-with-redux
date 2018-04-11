@@ -33,10 +33,18 @@ export function getSingleItem(id){
 
 export function deleteItem(id){
     const response = axios.delete(`${BASE_URL}/todos/${id + API_KEY}`);
-    
 
     return {
         type: types.DELETE_SINGLE_ITEM,
+        payload: response
+    }
+}
+
+export function toggleComplete(id){
+    const response = axios.put(`${BASE_URL}/todos/${id + API_KEY}`);
+
+    return {
+        type: types.TOGGLE_COMPLETE,
         payload: response
     }
 }
